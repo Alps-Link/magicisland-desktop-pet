@@ -1,0 +1,89 @@
+# ============================================================
+# 桌宠合集 .gitignore
+# 原则：进 git 的只有"代码 + 配置 + 文档"（约 3 MB）；
+#       大文件、第三方资产、用户隐私、构建产物一律不进。
+# ============================================================
+
+# ---- 第三方模型与素材（可再下载 / 或含版权，不进 git）----
+models/
+**/models/
+live2d_viewer/
+**/live2d_viewer/
+# Live2D 素材随身包（每只一份 live2d_viewer 的拷贝，内容同上是解包素材，不入库）
+LIVE2D/
+music_starter/
+**/music_starter/
+故事的开始/
+_old_extract/
+*.onnx
+*.safetensors
+*.bin
+*.exe
+*.zip
+*.7z
+*.rar
+*.mp3
+*.wav
+*.flac
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# ---- 用户数据与隐私（绝对不能上传）----
+userdata/
+**/userdata/
+*.log
+*.db
+*.sqlite
+*.sqlite3
+*_api_key.json
+custom_api.json
+*api*key*.json
+llm_config.json
+system_prompt.txt.bak
+*.bak
+token.json
+cookies.json
+.env
+.env.*
+*.pem
+*.key
+
+# ---- 构建产物与缓存 ----
+build/
+**/build/
+dist/
+**/dist/
+_dist_final/
+_build_logs/
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.py.new
+_bench*
+_*_analysis.txt
+
+# ---- 本地工具与本机私有 ----
+.dsh/
+.dsh-meow/
+.venv/
+venv/
+*.ps1
+!tools/*.ps1
+
+# ---- 打包线（撤出仓库，本地保留）----
+# 只服务于"自己出成品"：clone 下来跑源码用不到；spec 里还含本机绝对路径（会暴露用户名）。
+# 这些文件仍在硬盘上、打包照旧，换机器时记得单独拷这批。
+*.spec
+BUILD_MANIFEST.md
+tools/make_manifest.py
+tools/verify_zips.py
+tools/exe_report.py
+tools/check_drag_guard.py
+
+# ---- 例外：_pylibs 依赖按用户要求入库（一处管理）----
+# 放在文件最后，覆盖上面的 *.dll / *.pyd 等通配规则（gitignore 取最后匹配的那条）
+!_pylibs/
+!_pylibs/**

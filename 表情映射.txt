@@ -1,0 +1,17 @@
+薇薇的表情映射：
+relaxed——Face_Talk2
+surprised——Face_Surprise1
+hurried——Face_Lookup2
+happy——Face_Smile1
+shy——Face Surprise3
+worried——08.motion
+sleep——Face_Calm1
+
+艾丽卡的表情映射：
+relaxed——03.motion
+surprised——05.motion
+hurried——exp_03.motion
+happy——01.motion
+shy——07.motion
+worried——exp_05.motion
+sleep——04.motion
